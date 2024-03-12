@@ -2,16 +2,19 @@ import React from 'react'
 import "./Topics.css"
 import Navbar from '../Navbar/Navbar'
 import { motion } from 'framer-motion'
+import ParticleMouse from "../Backgrounds/ParticleMouse"
+
 
 const Topics = () => {
   return (
-    <motion.div className='Topicscontainer'
-    initial={{opacity: 0.6, scale: 0.5}}
+    <motion.div className='Topicscontainer gradientbackground'
+    initial={{opacity: 0.5, scale: 0.1}}
     animate={{opacity: 1, scale: 1}}
-    exit={{duration: 2}}
+    exit={{duration: 3}}
     >
+        <ParticleMouse />
         <Navbar/>
-       
+
         <div className="Topicsinner">
         <h2>Themen</h2>
             <div className="topics">

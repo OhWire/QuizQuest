@@ -1,25 +1,13 @@
-.video-background {
-    position: relative;
-    height: 100vh;
-    width: 100vw;
-    overflow: hidden  ;
-  }
-  
-  .video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100% ;
-    height: 100%;
-    object-fit:cover; /* Ensure the video covers the entire container */
-    z-index: -9; /* Position the video behind other content */
-  }
-
-  .Homecontainer{
+.Homecontainer{
     display: flex;
     flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    background-color: transparent;
     justify-content: center;
     align-items: center;
+    
+    
     
   }
 
@@ -27,28 +15,30 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 15vh;
-    width: 100%;
+    width: 50vw;
+    height: 60vh;
     padding: 0;
-    backdrop-filter: blur(3px);
     border-radius: 10rem;
     background-color: rgba(87, 43, 10, 0.006);
+    z-index: 5;
   }
 
   .leftcontainer h1, p  {
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    padding: 0vw 0vw 0vw 0.2vw;
+    padding: 0;
     margin: 0;
     font-size: 8rem;
-    font-family: "Poppins";
     font-weight: 800;
-    background: linear-gradient(to right, rgba(175, 122, 57, 0.997), rgba(234, 233, 233, 0.937));    
+    background: linear-gradient(to right, rgba(15, 74, 10, 0.94), rgba(0, 0, 0, 0));    
     -webkit-background-clip: text; /* For Safari/Chrome */
     background-clip: text;
     color: transparent;
-    text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.323);
+    text-shadow: 2px 2px 1px rgba(247, 244, 244, 0.515);
+    font-family: "Bebas Neue";
+
+
   }
 
 
@@ -56,33 +46,45 @@
   text-transform: uppercase;
   font-size: 10rem;
   letter-spacing: 0.5rem;
-  text-shadow: 3px 2px 1px rgba(54, 91, 11, 0.333);
+  text-shadow: 3px 2px 1px rgba(241, 234, 234, 0.645);
+  font-family: "Bebas Neue";
+  padding-right: 1rem;
+  
 }
 
 .Quwrong{
+  padding-left: 2rem;
+  padding-right: 1rem;
   text-transform: uppercase;
   font-size: 10rem;
   letter-spacing: 0.5rem;
-  text-shadow: 3px 2px 1px rgba(92, 22, 22, 0.451);
+  text-shadow: 3px 2px 1px rgba(241, 234, 234, 0.645);
+  font-family: "Bebas Neue";
 }
 
 
   .rightcontainer{
     display: flex;
     justify-content: center;
-    align-items: center;
-    width: 100%;
-    padding-top: 20vh;
+    align-items: flex-start;
+    width: 50vw;
+    height: 50vh;
+    z-index: 5;
     
   }
 
   .Startbutton{
-    background: linear-gradient(to right, rgba(175, 122, 57, 0.94), rgba(0, 0, 0, 0.852));    
-    width: 30vw;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 10vh;
     color: white;
-    padding: 20px 0px;
-    font-size: 2rem;
-    animation: attention 3s ease-in-out infinite;
+    font-family: "Roboto";
+    font-weight: bold;
+    font-size: 4rem;
+    animation: attention 10s ease-in-out infinite;
     transition: ease-in-out 0.7s;
     letter-spacing: 0.2rem;
      /* Start the animation after 5 seconds */
@@ -93,7 +95,10 @@
  .Startbutton a{
   text-decoration: none;
   color: rgba(255, 255, 255, 0.827);
-  font-size: 48px;
+  font-family: "Play";
+  font-weight: 100;
+  font-size: 2rem;
+  
   
  }
 
@@ -103,8 +108,7 @@
     cursor: pointer;
     transition: ease-in-out 0.7s;
     animation-play-state: paused;
-    background: linear-gradient(to right, rgba(175, 122, 57, 0.695), rgba(170, 161, 161, 0.307),rgba(170, 161, 161, 0.852));  
-    letter-spacing: 0.6rem;
+    border-bottom: 1px solid white;
   }
 
   .QU{
@@ -114,6 +118,7 @@
   @keyframes attention {
     0% {
       transform: translateX(0) rotate(-2deg);
+      box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.182);
     }
     10% {
       transform: translateX(0) rotate(2deg);
@@ -123,6 +128,7 @@
     }
     30% {
       transform: translateX(0) rotate(2deg);
+      box-shadow: 1px 1.5px 2px white;
     }
     40% {
       transform: translateX(0) rotate(-2deg);
@@ -130,12 +136,14 @@
   
     50% {
       transform: translateX(0) rotate(2deg);
+      
     }
     60% {
       transform: translateX(0) rotate(-2deg);
     }
     70% {
       transform: translateX(0) rotate(2deg);
+      box-shadow: 1px 2px 1px white;
     }
     80% {
       transform: translateX(0) rotate(-2deg );
@@ -146,6 +154,7 @@
 
     100%{
       transform: translateX(0) rotate(-2deg);
+      box-shadow: 1px 1.5px 2px rgba(255, 255, 255, 0.233);
     }
 
     
@@ -153,3 +162,63 @@
 
 
   }
+
+  @keyframes gradient {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+.wave {
+    background: rgb(255 255 255 / 25%);
+    border-radius: 1000% 1000% 0 0;
+    position: fixed;
+    width: 200%;
+    height: 12em;
+    animation: wave 10s -3s linear infinite;
+    transform: translate3d(0, 0, 0);
+    opacity: 0.8;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.wave:nth-of-type(2) {
+    bottom: -1.25em;
+    animation: wave 18s linear reverse infinite;
+    opacity: 0.8;
+}
+
+.wave:nth-of-type(3) {
+    bottom: -2.5em;
+    animation: wave 20s -1s reverse infinite;
+    opacity: 0.9;
+}
+
+@keyframes wave {
+    2% {
+        transform: translateX(1);
+    }
+
+    25% {
+        transform: translateX(-25%);
+    }
+
+    50% {
+        transform: translateX(-50%);
+    }
+
+    75% {
+        transform: translateX(-25%);
+    }
+
+    100% {
+        transform: translateX(1);
+    }
+}

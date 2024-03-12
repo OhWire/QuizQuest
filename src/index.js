@@ -29,8 +29,8 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-     <AnimatePresence>
-   <RouterProvider router={router}/>
+    <AnimatePresence>
+      <RouterProvider router={router}/>
    </AnimatePresence>
   </React.StrictMode>
 );
