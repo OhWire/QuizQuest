@@ -14,9 +14,8 @@ import Loader from './Components/Loader/Loader';
 
 
 function App() {
-  const [isloading, setIsLoading] = useState(true)
-  const [initialLoadComplete, setInitialLoadComplete] =useState(false)
-
+  const [isLoading, setIsLoading] = useState(true);
+  const [initialLoadComplete, setInitialLoadComplete] = useState(false);
 
   useEffect(() => {
     const fakeDataFetch = () => {
@@ -24,7 +23,7 @@ function App() {
         setIsLoading(false);
         setInitialLoadComplete(true); // Data fetching for the initial load is complete
       }, 4000);
-    }
+    };
 
     if (!initialLoadComplete) {
       fakeDataFetch(); // Only fetch data if the initial load hasn't completed
@@ -33,28 +32,25 @@ function App() {
 
   const location = useLocation();
 
+  // Check if it's still loading or if the initial load is complete
+  if (isLoading) {
+    return <Loader />;
+  }
 
-  return isloading ? ( <Loader /> ) : ( 
-    
-     
-    
+  return (
     <AnimatePresence>
-    <div className="App" id='c' location={location} key={location.pathname}> 
-      <header className="App-header">
-      <Navbar/>
-      <Routes location={location} key={location.pathname}>
-        <Route index element={<Home/>} />
-        <Route path="/quiz" element={<Quiz/>}/>
-        <Route path="/topics" element={<Topics/>}/>
-      </Routes>
-    </header>
-  
-      
-      
-     
-    </div>
+      <div className="App" id="c" location={location} key={location.pathname}>
+        <header className="App-header">
+          <Navbar />
+          <Routes location={location} key={location.pathname}>
+            <Route index element={<Home />} />
+            <Route path="/quiz" element={<Quiz />} />
+            <Route path="/topics" element={<Topics />} />
+          </Routes>
+        </header>
+      </div>
     </AnimatePresence>
-  )
+  );
 }
- 
+
 export default App;
