@@ -1,0 +1,155 @@
+.video-background {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden  ;
+  }
+  
+  .video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% ;
+    height: 100%;
+    object-fit:cover; /* Ensure the video covers the entire container */
+    z-index: -9; /* Position the video behind other content */
+  }
+
+  .Homecontainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+  }
+
+  .leftcontainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15vh;
+    width: 100%;
+    padding: 0;
+    backdrop-filter: blur(3px);
+    border-radius: 10rem;
+    background-color: rgba(87, 43, 10, 0.006);
+  }
+
+  .leftcontainer h1, p  {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 0vw 0vw 0vw 0.2vw;
+    margin: 0;
+    font-size: 8rem;
+    font-family: "Poppins";
+    font-weight: 800;
+    background: linear-gradient(to right, rgba(175, 122, 57, 0.997), rgba(234, 233, 233, 0.937));    
+    -webkit-background-clip: text; /* For Safari/Chrome */
+    background-clip: text;
+    color: transparent;
+    text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.323);
+  }
+
+
+.Qu{
+  text-transform: uppercase;
+  font-size: 10rem;
+  letter-spacing: 0.5rem;
+  text-shadow: 3px 2px 1px rgba(54, 91, 11, 0.333);
+}
+
+.Quwrong{
+  text-transform: uppercase;
+  font-size: 10rem;
+  letter-spacing: 0.5rem;
+  text-shadow: 3px 2px 1px rgba(92, 22, 22, 0.451);
+}
+
+
+  .rightcontainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-top: 20vh;
+    
+  }
+
+  .Startbutton{
+    background: linear-gradient(to right, rgba(175, 122, 57, 0.94), rgba(0, 0, 0, 0.852));    
+    width: 30vw;
+    color: white;
+    padding: 20px 0px;
+    font-size: 2rem;
+    animation: attention 3s ease-in-out infinite;
+    transition: ease-in-out 0.7s;
+    letter-spacing: 0.2rem;
+     /* Start the animation after 5 seconds */
+    
+  }
+
+
+ .Startbutton a{
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.827);
+  font-size: 48px;
+  
+ }
+
+
+
+  .Startbutton:hover{
+    cursor: pointer;
+    transition: ease-in-out 0.7s;
+    animation-play-state: paused;
+    background: linear-gradient(to right, rgba(175, 122, 57, 0.695), rgba(170, 161, 161, 0.307),rgba(170, 161, 161, 0.852));  
+    letter-spacing: 0.6rem;
+  }
+
+  .QU{
+    color: black;
+  }
+
+  @keyframes attention {
+    0% {
+      transform: translateX(0) rotate(-2deg);
+    }
+    10% {
+      transform: translateX(0) rotate(2deg);
+    }
+    20% {
+      transform: translateX(0) rotate(-2deg);
+    }
+    30% {
+      transform: translateX(0) rotate(2deg);
+    }
+    40% {
+      transform: translateX(0) rotate(-2deg);
+    }
+  
+    50% {
+      transform: translateX(0) rotate(2deg);
+    }
+    60% {
+      transform: translateX(0) rotate(-2deg);
+    }
+    70% {
+      transform: translateX(0) rotate(2deg);
+    }
+    80% {
+      transform: translateX(0) rotate(-2deg );
+    }
+    90% {
+      transform: translateX(0) rotate(2deg);
+    }
+
+    100%{
+      transform: translateX(0) rotate(-2deg);
+    }
+
+    
+    
+
+
+  }

@@ -1,13 +1,37 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
+import Topics from './Components/Topics/Topics';
+import Quiz from './Components/Quiz/Quiz';
+import App from './App';
+
+const router = createBrowserRouter([
+{
+  path:"/",
+  element: <App/> 
+},
+{
+  path:"/Topics",
+  element: <Topics/>
+},
+{
+  path:"/Quiz",
+  element: <Quiz/>
+}
+
+
+
+]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+     <AnimatePresence>
+   <RouterProvider router={router}/>
+   </AnimatePresence>
   </React.StrictMode>
 );
 
