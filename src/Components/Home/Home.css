@@ -111,9 +111,7 @@
     border-bottom: 1px solid white;
   }
 
-  .QU{
-    color: black;
-  }
+ 
 
   @keyframes attention {
     0% {
@@ -221,4 +219,50 @@
     100% {
         transform: translateX(1);
     }
+}
+
+@media screen and (max-width: 767px) {
+    .Qu{
+      font-size: 2rem;
+      padding: 0.2rem;
+    }
+
+    .leftcontainer{
+      width: 100vw;
+    }
+
+    .leftcontainer h1, p {
+      font-size: 1.4rem;
+      margin: 0;
+
+    }
+
+    .Quwrong{
+      font-size: 2rem;
+      padding: 0.2rem;
+    }
+
+    .rightcontainer{
+        width: 100vw;
+    }
+
+    .Startbutton{
+      width: 50%;
+      
+    }
+}
+
+/* Breakpoint for tablets and larger screens */
+@media screen and (min-width: 768px) {
+  /* Adjust styles for tablets and larger screens */
+  
+}
+
+/* Breakpoint for desktops and larger screens */
+@media screen and (min-width: 1200px) {
+  /* Adjust styles for desktops and larger screens */
+  body {
+    /* Example of style adjustment */
+    font-size: 18px;
+  }
 }

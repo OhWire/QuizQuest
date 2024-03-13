@@ -22,14 +22,14 @@ const Navbar = () => {
     >
       
       <div className="Navcontainer">
-        <div className="Logocontainer">
+      <div className="Logocontainer">
         
           
-          <img src={Logo} alt="Logo" className='Logo' />
-          
-          
+        <img src={Logo} alt="Logo" className='Logo' />
+        
+        
 
-        </div>   
+      </div> 
 
         <div className="Linkscontainer">
           <ul className="Linkscontainer">
@@ -42,6 +42,7 @@ const Navbar = () => {
             
           </ul>
         </div>
+        
       </div>
     </motion.div>
   );

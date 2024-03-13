@@ -62,10 +62,9 @@
     justify-content: center;
     align-items: center;
     width: 50vw;
-    font-size: 8rem;
+    font-size: 5rem;
     padding-right: 4rem;
     margin: 0;
-   
     font-weight: 800;
     background: linear-gradient(to right, rgba(32, 102, 41, 0.997), rgba(27, 3, 3, 0.937));    
     -webkit-background-clip: text; /* For Safari/Chrome */
@@ -116,4 +115,42 @@
 
 .topic-link{
     text-decoration: none; /* Remove default underline */
+}
+
+@media screen and (max-width: 767px) {
+    .topics{
+        width: 80vw;
+    }
+
+    .Topicsinner h2{
+        font-size: 1rem;
+        padding-left: 5rem;
+        
+    }
+
+    .topic{
+        font-size: 1rem;
+    }
+
+    .Topicsinner{
+        display: flex;
+        justify-content: center;
+        align-items: center;        
+        width: 100%;
+    }
+}
+
+/* Breakpoint for tablets and larger screens */
+@media screen and (min-width: 768px) {
+  /* Adjust styles for tablets and larger screens */
+  
+}
+
+/* Breakpoint for desktops and larger screens */
+@media screen and (min-width: 1200px) {
+  /* Adjust styles for desktops and larger screens */
+  body {
+    /* Example of style adjustment */
+    font-size: 18px;
+  }
 }

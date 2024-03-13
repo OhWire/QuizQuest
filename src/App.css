@@ -11,3 +11,31 @@ body {
   width: 100vw;
   height: 100vh ;
 }
+
+
+/* Breakpoint for small screens (e.g., smartphones in portrait mode) */
+@media screen and (max-width: 767px) {
+  /* Adjust styles for small screens */
+  .App-Header {
+    /* Example of style adjustment */
+    flex-direction: column;
+  }
+}
+
+/* Breakpoint for tablets and larger screens */
+@media screen and (min-width: 768px) {
+  /* Adjust styles for tablets and larger screens */
+  .App-Header {
+    /* Example of style adjustment */
+    justify-content: space-between;
+  }
+}
+
+/* Breakpoint for desktops and larger screens */
+@media screen and (min-width: 1200px) {
+  /* Adjust styles for desktops and larger screens */
+  body {
+    /* Example of style adjustment */
+    font-size: 18px;
+  }
+}
