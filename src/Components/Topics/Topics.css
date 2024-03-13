@@ -41,21 +41,29 @@
     flex-direction: column;
     background-color: transparent;
     border-radius: 10rem;
-    width: 95vw;
+    width: 100vw;
     height: 100vh;
 }
 
 .topics{
     display: flex;
     justify-content: center;
-    align-items: center;
+    flex-wrap: wrap;
+    text-decoration: none;
+    width: 60vw;
     
+
 }
 
+
+
 .Topicsinner h2{
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50vw;
     font-size: 8rem;
-    padding-right: 2vw;
+    padding-right: 4rem;
     margin: 0;
    
     font-weight: 800;
@@ -75,6 +83,8 @@
     width: 20vw;
     height: 8vh;
     margin: 2vh;
+    text-decoration: none;
+    
     background-color: linear-gradient(to right,rgba(230, 222, 222, 0.347), rgba(175, 122, 57, 0.504));    
     transition: ease-in-out 0.6s;
 }
@@ -101,4 +111,9 @@
     transition: ease-in-out 0s;
     
     
+}
+
+
+.topic-link{
+    text-decoration: none; /* Remove default underline */
 }

@@ -6,70 +6,80 @@ const quizData =
             options: ["Nanu", "Vim", "Emacs", "Word"],
             answer: "Vim",
             explanation: "Vim ist der Standard-Texteditor in den meisten Linux-Distributionen.",
-            showID: "LPI 0001"
+            showID: "LPI 0001",
+            topic: "Linux" // 
         },
         {
             "question": "Welches Kommando wird verwendet, um den aktuellen Verzeichnispfad in der Linux-Befehlszeile anzuzeigen?",
             "options": ["pwd", "currentdir", "showpath", "dir"],
             "answer": "pwd",
             "explanation": "Das `pwd` (Print Working Directory)-Kommando wird verwendet, um den aktuellen Verzeichnispfad in der Linux-Befehlszeile anzuzeigen.",
-            showID: "LPI 0002"
+            showID: "LPI 0002",
+            topic: "Linux"
         },
         {
             "question": "Was ist eine GUI?",
             "options": ["Eine graphische Benutzeroberfläche.", "Ein textbasiertes Interaktionsmedium.", "Ein Programmiercode zur Datenverarbeitung.", "Ein drahtloses Kommunikationsprotokoll."],
             "answer": "Eine graphische Benutzeroberfläche.",
             "explanation": "Eine GUI (Graphical User Interface) ist eine visuelle Methode, um mit einem Computersystem oder einer Softwareanwendung zu interagieren. Sie verwendet grafische Elemente wie Fenster, Symbole, Menüs und Schaltflächen, um Benutzern die Navigation und Ausführung von Aufgaben zu erleichtern.",
-            showID: "LPI 0003"
+            showID: "LPI 0003",
+            topic: "Linux"
         },
         {
             "question": "Auf welchem der folgenden Betriebssysteme läuft Raspbian Linux?",
             "options": ["Windows", "macOS", "Ubuntu", "Raspberry Pi OS"],
             "answer": "Raspberry Pi OS",
             "explanation": "Raspbian ist ein Betriebssystem, das speziell für den Einsatz auf dem Raspberry Pi entwickelt wurde, einem beliebten Einplatinencomputer. Es basiert auf Debian Linux und wurde für die optimale Leistung und Kompatibilität mit der Hardware des Raspberry Pi angepasst. Daher läuft Raspbian Linux auf dem Raspberry Pi.",
-            showID: "LPI 0004"
+            showID: "LPI 0004",
+            topic: "Linux"
         },
         {
             "question": "Welches der folgenden Beispiele ist ein Beispiel für eingebettetes Linux?",
             "options": ["Ubuntu Desktop", "Fedora Server", "Android", "CentOS Workstation"],
             "answer": "Android",
             "explanation": "Android ist ein Beispiel für eingebettetes Linux, da es speziell für den Einsatz in mobilen Geräten wie Smartphones und Tablets entwickelt wurde. Es basiert auf dem Linux-Kernel und wurde für die Anforderungen und Beschränkungen von mobilen Geräten optimiert.",
-            showID: "LPI 0005"
+            showID: "LPI 0005",
+            topic: "Linux"
         },
         {
             "question": "Was steuert die Hardware direkt und übersetzt die Befehle einer Software in etwas, das die Hardware verstehen und umsetzen kann?",
             "options": ["Kernel", "Compiler", "Shell", "Treiber"],
             "answer": "Kernel",
             "explanation": "Der Kernel ist der zentrale Bestandteil eines Linux-Betriebssystems. Er steuert die Hardware direkt und ermöglicht die Ausführung von Anwendungen, indem er die Befehle der Software in Anweisungen übersetzt, die die Hardware verstehen und umsetzen kann.",
-            showID: "LPI 0006"
+            showID: "LPI 0006",
+            topic: "Linux"
         },
         {
             "question": "Welches der folgenden Programme könnten Sie auf einem Linux-System als Ersatz für Microsoft Word verwenden?",
             "options": ["LibreOffice Writer", "GIMP", "VLC Media Player", "Audacity"],
             "answer": "LibreOffice Writer",
             "explanation": "LibreOffice Writer ist eine Open-Source-Textverarbeitungssoftware, die Teil des LibreOffice-Pakets ist und auf Linux-Systemen als Ersatz für Microsoft Word verwendet werden kann.",
-            showID: "LPI 0007"
+            showID: "LPI 0007",
+            topic: "Linux"
         },
         {
             "question": "Welche der folgenden Organisationen ist eine amerikanische Non-Profit-Organisation, die es sich zur Aufgabe gemacht hat, das Angebot an kreativen Werken zu erweitern, auf denen andere legal aufbauen und die sie gemeinsam nutzen können?",
             "options": ["Wikimedia Foundation", "Electronic Frontier Foundation", "Creative Commons", "Free Software Foundation"],
             "answer": "Creative Commons",
             "explanation": "Creative Commons ist eine Non-Profit-Organisation mit Sitz in den USA, die sich für die Bereitstellung von Lizenzen für kreative Werke einsetzt. Diese Lizenzen ermöglichen es den Urhebern, ihre Werke mit bestimmten Nutzungsbedingungen zu versehen, die anderen erlauben, die Werke zu nutzen, zu teilen und zu verändern, während gleichzeitig die Urheberrechte geschützt werden.",
-            showID: "LPI 0008"
+            showID: "LPI 0008",
+            topic: "Linux"
         },
         {
             "question": "Wie lautet der allgemeine Name für den Schutz von Shell-Meta-Zeichen vor einer Sonderbehandlung durch die Shell?",
             "options": ["Shell-Schutz", "Shell-Escape", "Shell-Quoting", "Shell-Verbergen"],
             "answer": "Shell-Quoting",
             "explanation": "Shell-Quoting bezieht sich auf die Technik, Shell-Meta-Zeichen vor einer speziellen Interpretation durch die Shell zu schützen. Durch das Quoting werden die Meta-Zeichen als Teil einer Zeichenkette behandelt und nicht als spezielle Befehlselemente interpretiert. Dies ist nützlich, wenn Sie Zeichen wie Leerzeichen, Anführungszeichen oder Wildcards in Datei- oder Verzeichnisnamen verwenden möchten, ohne dass die Shell sie interpretiert.",
-            showID: "LPI 0009"
+            showID: "LPI 0009",
+            topic: "Linux"
         },
         {
             "question": "Welche der folgenden Optionen ist eine gültige Option für einen typischen Befehl, um seine integrierten Nutzungsinformationen zu erhalten?",
             "options": ["-u", "-h", "-g", "-i"],
             "answer": "-h",
             "explanation": "Die Option '-h' wird häufig verwendet, um Hilfe oder integrierte Nutzungsinformationen für viele Linux-Befehle anzuzeigen. Wenn Sie also beispielsweise 'befehl -h' eingeben, erhalten Sie normalerweise eine kurze Beschreibung des Befehls sowie eine Liste der verfügbaren Optionen und deren Verwendung.",
-            showID: "LPI 0010"
+            showID: "LPI 0010",
+            topic: "Linux"
         },
         {
             "question": "Welcher der folgenden Befehle gibt eine Liste aller Dateinamen in Ihrem Home-Verzeichnis und aller Unterverzeichnisse mit Dateinamen, die auf .pdf enden, aus?",
@@ -133,6 +143,14 @@ const quizData =
             "answer": "export",
             "explanation": "Der Befehl 'export' wird verwendet, um eine Shell-Variable für nachfolgend ausgeführte Programme bekannt zu machen. Dadurch wird die Variable für alle Kindprozesse der aktuellen Shell verfügbar gemacht.",
             showID: "LPI 0019"
+        },
+        {
+            "question": "Wer ist ein Dummer Bastard dessen Mutter stinkt bis zum Himmel?",
+            "options": ["deine Mutter", "Chris seine Mutter", "die gefickte Mutter", "Der Typ mit Gottkomplex an der Tastatur"],
+            "answer": "deine Mutter",
+            "explanation": "Der Befehl 'export' wird verwendet, um eine Shell-Variable für nachfolgend ausgeführte Programme bekannt zu machen. Dadurch wird die Variable für alle Kindprozesse der aktuellen Shell verfügbar gemacht.",
+            showID: "LPI 0019",
+            topic: "Mac"
         }
         
 

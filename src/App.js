@@ -19,8 +19,8 @@ function App() {
           <Navbar />
           <Routes >
             <Route index element={<Home />} />
-            <Route path="/quiz" element={<Quiz />} />
-            <Route path="/topics" element={<Topics />} />
+            <Route path="/Quiz/" element={<Quiz/>} />
+            <Route path="/Topics" element={Topics} />
           </Routes>
         </header>
       </div>

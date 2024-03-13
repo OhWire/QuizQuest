@@ -137,14 +137,30 @@ button {
 .nextButton{
     
     transform: ease-in-out 1s;
-    width: 20%; 
+    width: 10%; 
     height: 8vh;
     font-size: 1.2rem;
     
 }
+.backButton{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 2rem;
+    transform: ease-in-out 1s;
+    width: 5vw; 
+    height: 5vh;
+    font-size: 1rem;
+    
+}
 
+.backButton:hover {
+    cursor: pointer;
+    background: linear-gradient(to right, rgba(175, 122, 57, 0.542), rgba(0, 0, 0, 0.2));
+}
 .nextButton:hover{
     cursor: pointer;
+    background: linear-gradient(to right, rgba(175, 122, 57, 0.542), rgba(0, 0, 0, 0.2));
 }
 .non-correct-answer{
     transform: ease-in 0.1s;
@@ -173,4 +189,22 @@ button {
    
     background: linear-gradient(to right, rgba(181, 179, 52, 0.527), rgba(0, 128, 0, 0.522));
 
+}
+
+
+.noquestionscontainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.noquestions{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    width: 50vw;
+    height: 10%;
+    font-size: 2rem;
 }

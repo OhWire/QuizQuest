@@ -18,10 +18,14 @@ const router = createBrowserRouter([
   element: <Topics/>
 },
 {
+  path:"/Quiz/:topic",
+  element: <Quiz/>
+},
+
+{
   path:"/Quiz",
   element: <Quiz/>
 }
-
 
 
 ]);
