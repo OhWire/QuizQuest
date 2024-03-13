@@ -222,13 +222,17 @@
 }
 
 @media screen and (max-width: 767px) {
+    .Homecontainer{
+      overflow-y: hidden;
+    }
     .Qu{
       font-size: 2rem;
       padding: 0.2rem;
     }
 
     .leftcontainer{
-      width: 100vw;
+      height: 50vh;
+
     }
 
     .leftcontainer h1, p {
@@ -243,11 +247,11 @@
     }
 
     .rightcontainer{
-        width: 100vw;
+        width: 50vw;
     }
 
     .Startbutton{
-      width: 50%;
+      width: 100%;
       
     }
 }

@@ -135,6 +135,10 @@
     /* Breakpoint for small screens (e.g., smartphones in portrait mode) */
 @media screen and (max-width: 767px) {
   /* Adjust styles for small screens */
+
+  .div{
+    max-height: 100vh;
+  }
   .Navcontainer{
     width: 5vw;
   }

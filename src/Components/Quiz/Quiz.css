@@ -211,13 +211,16 @@ button {
 
 @media screen and (max-width: 767px) {
     .questioncontainer{
+        height: 100%;
+        max-width: 80vw;
         background-color: transparent;
         backdrop-filter: blur(8px);        
         animation: Questions 10s ease infinite;
         border-radius: 6rem;
         background-color: rgba(30, 29, 29, 0.448);
-        max-height: 50vh; 
-        padding: 5vh 3vh;
+        max-height: 40vh; 
+        padding: 3vh 2vh;
+        margin: 1rem;
         align-items: center;
         justify-content: center;
     }
