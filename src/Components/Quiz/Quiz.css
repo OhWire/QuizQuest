@@ -211,27 +211,32 @@ button {
 
 @media screen and (max-width: 767px) {
     .questioncontainer{
-        height: 40%;
+        display: flex;
         max-width: 80vw;
         background-color: transparent;
-        backdrop-filter: blur(8px);        
-        animation: Questions 10s ease infinite;
-        border-radius: 6rem;
-        background-color: rgba(30, 29, 29, 0.448);
-        max-height: 30vh; 
-        padding: 3vh 2vh;
-        margin: 1rem;
-        align-items: center;
+             
+        padding-top: 0;
+        padding-bottom: 10vh;
+       
+        
+        max-height: 25vh; 
+        
+        
+        align-items: flex-start;
         justify-content: center;
     }
 
     .questioncontainer h1{
+        animation: Questions 10s ease infinite;
+        border-radius: 6rem;
+        backdrop-filter: blur(8px);   
         min-height: 0;
         font-size: 0.9rem;
         font-weight: 100;
-        padding: 0;
+        padding: 4vh;
         margin-top: 2rem;
         max-height: 30vh;
+        background-color: rgba(30, 29, 29, 0.448);
     }
     .answercontainer{
         height: 40%;
