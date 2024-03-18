@@ -24,6 +24,31 @@ const Quiz = () => {
     setScore(0); // Reset score when the topic changes
   }, [topic]);
 
+  useEffect(() => {
+    const audio = new Audio('/Chris.mp3');
+    audio.loop = true; // Enable looping
+    const playPromise = audio.play();
+    
+    if (playPromise !== undefined) {
+      playPromise.then(_ => {
+        // Automatic playback started!
+        // Ensure the audio loops
+        audio.loop = true;
+      }).catch(error => {
+        // Auto-play was prevented
+        // Show a UI element to let the user manually start playback
+        console.log("Playback prevented. Please interact with the document first.");
+        // You might want to handle this case more gracefully in a real application
+      });
+    }
+    return () => {
+      audio.pause();
+      audio.currentTime = 0; // Optionally reset the audio to the start
+    };
+    // Cleanup function to stop the music when the component unmounts
+    
+  }, []);
+
 
   const handleOptionSelect = (option) => {
     setSelectedOption(option);
