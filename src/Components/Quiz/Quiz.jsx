@@ -3,34 +3,45 @@ import './Quiz.css';
 import Navbar from '../Navbar/Navbar';
 import { motion } from 'framer-motion';
 import Gradientbackground from '../Backgrounds/Gradientbackground';
-import quizData from './quizData'; // Import the provided quizData array
-import { useParams } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import quizData from './quizData.js';
+import { useParams, Link } from 'react-router-dom';
+import { Formik, Form, Field } from 'formik';
 
 const Quiz = () => {
   const { topic } = useParams();
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const [selectedOption, setSelectedOption] = useState(null);
   const [filteredQuestions, setFilteredQuestions] = useState([]);
+  const [isCheckingAnswer, setIsCheckingAnswer] = useState(false);
+  const [showAnswerResult, setShowAnswerResult] = useState(false);
+  const [score, setScore] = useState(0); // State to track the score
   const currentQuestionData = filteredQuestions[currentQuestionIndex];
 
   useEffect(() => {
-    // Filter questions based on the topic parameter
     const filteredData = quizData.filter(question => question.topic === topic);
     setFilteredQuestions(filteredData);
     setCurrentQuestionIndex(0); // Reset current question index when topic changes
+    setScore(0); // Reset score when the topic changes
   }, [topic]);
 
-  const handleOptionSelect = (option) => {
-    setSelectedOption(option);
+  const handleCheckAnswer = (values, formikBag) => {
+    const isCorrect = values.selectedOptions.includes(currentQuestionData.answer);
+    if (isCorrect) {
+      setScore(score + 1); // Increase score if the answer is correct
+    }
+    setIsCheckingAnswer(true);
+    setShowAnswerResult(true); // Show answer feedback
+    formikBag.setSubmitting(false);
   };
 
   const handleNextQuestion = () => {
-    // Move to the next question if the user has selected an option
-    if (selectedOption !== null) {
-      setSelectedOption(null);
+    if (currentQuestionIndex < filteredQuestions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
+    } else {
+      console.log(`Quiz completed. Your score: ${score}/${filteredQuestions.length}`);
+      // Here you can handle quiz completion (e.g., redirect to a score page or show the score in a modal)
     }
+    setIsCheckingAnswer(false);
+    setShowAnswerResult(false); // Reset for the next question
   };
 
   return (
@@ -42,43 +53,46 @@ const Quiz = () => {
       <Navbar />
       <Gradientbackground />
       <div className="quizinner">
-        {filteredQuestions.length > 0 && (
-          <>
-            <div className="questioncontainer">
-              <h1>{currentQuestionData.question}</h1>
-            </div>
-            <div className="answercontainer">
-              {currentQuestionData.options.map((option, index) => (
-                <button
-                  key={index}
-                  className={`button${index + 1} button ${selectedOption === option ? 'selected' : 'non-selected'} ${selectedOption !== null && option === currentQuestionData.answer ? 'correct-answer' : 'non-correct-answer'}`}
-                  onClick={() => handleOptionSelect(option)}
-                >
-                  <p className='Answer'>{option}</p>
+        {filteredQuestions.length > 0 && currentQuestionIndex < filteredQuestions.length ? (
+          <Formik
+            key={currentQuestionIndex} // Unique key for each question to reset Formik state
+            initialValues={{ selectedOptions: [] }}
+            onSubmit={(values, formikBag) => {
+                if (!isCheckingAnswer) {
+                    handleCheckAnswer(values, formikBag);
+                } else {
+                    handleNextQuestion();
+                    formikBag.resetForm(); // Reset the form for the next question
+                }
+            }}
+          >
+            {({ handleSubmit, isSubmitting }) => (
+              <Form>
+                <div className="questioncontainer">
+                  <h1>{currentQuestionData.question}</h1>
+                </div>
+                <div className="answercontainer">
+                  {currentQuestionData.options.map((option, index) => (
+                    <label key={index} className={`checkboxLabel ${showAnswerResult ? (option === currentQuestionData.answer ? 'correct-answer' : 'wrong-answer') : ''}`}>
+                      <Field className="checkbox" type="checkbox" name="selectedOptions" value={option} />
+                      <span className="Answer">{option}</span>
+                    </label>
+                  ))}
+                </div>
+                <button type="button" className="nextButton" onClick={handleSubmit} disabled={isSubmitting}>
+                  {isCheckingAnswer ? "Next" : "Check"}
                 </button>
-              ))}
-            </div>
-            {selectedOption !== null && currentQuestionIndex < filteredQuestions.length - 1 && (
-              <button className="nextButton" onClick={handleNextQuestion}>Next</button>
+              </Form>
             )}
-             <Link to={`/Topics`} >
-                <button className="backButton">
-                  Zurück
-                </button>
-              </Link>
-          </>
-        )}
-        {filteredQuestions.length === 0 && (
+          </Formik>
+        ) : (
           <div className="noquestionscontainer">
-            <p className='noquestions'>Da hat Chris noch nicht die Liste geschickt die Dreckssau deswegen gibts keine Fragen</p>
-            <Link to={`/Topics`} >
-                <button className="backButton">
-                  Zurück
-                </button>
-              </Link>
+            <p>No questions available or quiz completed.</p>
+            <Link to={`/Topics`}>
+              <button className="backButton">Back to Topics</button>
+            </Link>
           </div>
         )}
-             
       </div>
     </motion.div>
   );

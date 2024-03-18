@@ -9,10 +9,61 @@
    
 }
 
+input[type="checkbox"]{
+    appearance: none;
+    -webkit-appearance: none;
+    height: 1.5rem;
+    width: 1.5rem;
+    background-color: aliceblue;
+    cursor: pointer;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
 
-
+    
+}
 
  
+
+label{
+    color: #4c4c4c;
+    font-size: 2rem;
+    font-family: "Bebas Neue";
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+input[type="checkbox"]:after{
+    content: "\f00c";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 1.3rem;
+    color: white;
+    
+}
+
+input[type="checkbox"]:hover{
+    background-color: #a5a5a5   ;
+    
+}
+
+input[type="checkbox"]:checked{
+    background-color: #5bcd3e;
+}
+
+Form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
 
 .quizinner{
     display: flex;
@@ -32,7 +83,7 @@
 .questioncontainer{
    display: flex;
    justify-content:center;
-   padding-top: 10vh;
+   
    align-items: flex-start;
    text-align: center;
    width: 80vw;
@@ -100,14 +151,28 @@
 
 .answercontainer{
     display: flex;
-    width: 60%;
-    border-radius: 50px;
-    font-size: 1.5rem;
-    padding: 20px 0px;
+    
+    margin-left: 200px;
+    max-height: 50vh;
+    max-width: 80vw;
+    font-size: 1rem;
     flex-direction: column;
-    justify-content: flex-start;
+    padding-bottom: 3vh;
+    justify-content: center;
     align-items: center;
 }
+
+
+
+
+/* Hide the default checkbox input */
+
+
+  
+  /* Adjusting the .Answer class a bit for better alignment */
+  
+  
+
 
 button {
     font-family: "Bebas Neue", sans-serif;
@@ -164,16 +229,26 @@ button {
 }
 .non-correct-answer{
     transform: ease-in 0.1s;
-    color: red;
+    
 }
 
+
+
 .Answer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     letter-spacing: 2.8px;
     color: white;
     font-weight: 100;
-    font-size: 1.5rem;
-    font-family: "Play";
-}
+    font-size: 1rem;
+    font-family: "Play";   
+    line-height: 2.5rem;
+    min-width: 70vw;
+    
+     /* Adjust as needed */
+  }
+
 
 
 
@@ -186,8 +261,9 @@ button {
 }
 
 .correct-answer{
-   
+   margin: 10px;
     background: linear-gradient(to right, rgba(181, 179, 52, 0.527), rgba(0, 128, 0, 0.522));
+    border-radius: 20px;
 
 }
 
@@ -198,6 +274,11 @@ button {
     align-items: center;
     width: 100vw;
     height: 100vh;
+    font-size: 1rem;
+}
+
+.noquestionscontainer p{
+    font-size: 3rem;
 }
 
 .noquestions{
@@ -206,7 +287,15 @@ button {
     align-self: center;
     width: 50vw;
     height: 10%;
-    font-size: 2rem;
+    font-size: 1rem;
+}
+
+.wrong-answer{
+    background: linear-gradient(to right, rgba(181, 52, 52, 0.527), rgba(214, 10, 10, 0.522));
+    color: rgba(255, 0, 0, 0.13);
+    font-size: 1rem;
+    border-radius: 20px;
+    margin: 0.2rem;
 }
 
 @media screen and (max-width: 767px) {
@@ -240,11 +329,16 @@ button {
     }
     .answercontainer{
         height: 40%;
+        padding-top: 10vh;
+        margin-left: 4rem;
     }
    
 
     .Answer{
         font-size: 0.7rem;
+        width: 70vw;
+        line-height: 1.2rem;
+        padding: 0.3rem;
         
     }
 
@@ -260,8 +354,21 @@ button {
         height: 6vh;
     }
 
-    button{
-       
+
+    .score-display {
+        position: fixed; /* Or absolute, depending on layout */
+        top: 20px;
+        right: 20px;
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.6);
+        color: white;
+        border-radius: 8px;
+        font-size: 1.2rem;
+    }
+
+    button:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
     }
 }
 
@@ -271,8 +378,7 @@ button {
 
 /* Breakpoint for tablets and larger screens */
 @media screen and (min-width: 768px) {
-  /* Adjust styles for tablets and larger screens */
-  
+   
 }
 
 /* Breakpoint for desktops and larger screens */

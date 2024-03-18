@@ -5,7 +5,7 @@ import { AnimatePresence } from 'framer-motion';
 import Home from './Components/Home/Home';
 import Navbar from './Components/Navbar/Navbar';
 import { Routes } from 'react-router-dom';
-import Quiz from './Components/Quiz/Quiz';
+import Quiz from "./Components/Quiz/Quiz"
 import Topics from './Components/Topics/Topics';
 
 
