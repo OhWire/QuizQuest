@@ -3,59 +3,47 @@
     justify-content: center;
     height: 100vh;
     width: 100vw;
-    padding: 0;
+    
     
     flex-direction: column; 
    
 }
 
-input[type="checkbox"]{
-    appearance: none;
-    -webkit-appearance: none;
-    height: 1.5rem;
-    width: 1.5rem;
-    background-color: aliceblue;
-    cursor: pointer;
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-
+input[type="radio"]{
+    display: none;
     
 }
 
  
 
 label{
-    color: #4c4c4c;
-    font-size: 2rem;
+    
+    font-size: 1rem;
     font-family: "Bebas Neue";
     font-weight: 600;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 2px solid rgba(77, 75, 75, 0.218);
+    margin: 10px;
+    padding: 5px;
+    border-radius: 50px;
+    
+    animation: answerreveal 1s linear ;
     
 }
 
-input[type="checkbox"]:after{
-    content: "\f00c";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    font-size: 1.3rem;
-    color: white;
-    
+label:hover{
+    background-color: rgba(144, 144, 110, 0.377);
+    backdrop-filter: blur(8px);
+    border: 2px solid rgba(255, 255, 255, 0.618);
 }
 
-input[type="checkbox"]:hover{
-    background-color: #a5a5a5   ;
-    
-}
 
-input[type="checkbox"]:checked{
-    background-color: #5bcd3e;
-}
+
+
+
 
 Form {
     display: flex;
@@ -69,11 +57,13 @@ Form {
     display: flex;
     
     flex-direction: column;
-    
-    justify-content: flex-start;
-    align-items: center ;
+    justify-content: flex-end;
+    align-self: flex-end ;
     height: 100vh;
-    max-width: 100vw;
+    width: 90vw;
+    max-width: 90vw;
+  
+    
 
 
    
@@ -83,11 +73,17 @@ Form {
 .questioncontainer{
    display: flex;
    justify-content:center;
-   
-   align-items: flex-start;
+   align-items: center;
+position: absolute;
    text-align: center;
    width: 80vw;
-   height: 40vh;
+   top: 0;
+   border-radius: 0px 0px 40px 40px;
+   max-height: 90vh;
+  padding-top: 2rem;
+   backdrop-filter: blur(12px);
+   background-color: #4c4c4c30;
+
  
    
 
@@ -98,68 +94,37 @@ Form {
 .questioncontainer h1{
     display: flex;
     min-height: 10vh;
-    max-height: 50vh;
+    
     max-width: 80%;
     justify-content: center;
     align-items: center;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-family: "Bebas Neue", sans-serif;
+    font-weight: 100;
    text-shadow: 2px 1px 0px rgba(32, 31, 31, 0.589);
    color: white;
    letter-spacing: 2.8px;
-    padding: 2rem;
+    padding-bottom: 1rem;
   
-   
+    animation: questionreveal 1s linear ;
    
     
 
 }
 
 
-@keyframes Questions {
-	0% {
-		border: 1px solid rgb(163, 160, 160);
-	}
-    10%{
-        border: 1px solid rgba(255, 255, 255, 0.867);
-    }
-
-	30% {
-		border: 1px solid rgba(255, 255, 255, 0.64);
-	}
-
-    50% {
-		border: 1px solid rgba(255, 255, 255, 0.44);
-	}
-	70% {
-		border: 1px solid rgba(255, 255, 255, 0.64);
-	}
-
-    80%{
-        border: 1px solid rgba(255, 255, 255, 0.84);
-    }
-
-    90%{
-        border: 1px solid rgba(255, 255, 255, 0.9);
-    }
-
-    100%{
-        border: 1px solid rgba(255, 255, 255, 1);
-    }
-}
 
 
 .answercontainer{
     display: flex;
-    
-    margin-left: 200px;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 15vh    ;
     max-height: 50vh;
     max-width: 80vw;
     font-size: 1rem;
     flex-direction: column;
-    padding-bottom: 3vh;
-    justify-content: center;
-    align-items: center;
+    
 }
 
 
@@ -200,11 +165,13 @@ button {
 }
 
 .nextButton{
-    
+    position: absolute;
     transform: ease-in-out 1s;
     width: 10%; 
     height: 8vh;
     font-size: 1.2rem;
+    bottom: 2vh;
+    animation: answerreveal 3s linear ;
     
 }
 .backButton{
@@ -243,8 +210,10 @@ button {
     font-weight: 100;
     font-size: 1rem;
     font-family: "Play";   
-    line-height: 2.5rem;
+    line-height: 120%;
     min-width: 70vw;
+    padding: 5px;
+    animation: answerreveal 1s linear ;
     
      /* Adjust as needed */
   }
@@ -258,12 +227,16 @@ button {
 
 .selected{
     background: linear-gradient(to right, rgba(175, 122, 57, 0.542), rgba(0, 0, 0, 0.2));
+    
+    
 }
 
 .correct-answer{
-   margin: 10px;
+   
     background: linear-gradient(to right, rgba(181, 179, 52, 0.527), rgba(0, 128, 0, 0.522));
     border-radius: 20px;
+    animation: answerreveal 2.5s linear ;
+   
 
 }
 
@@ -295,8 +268,22 @@ button {
     color: rgba(255, 0, 0, 0.13);
     font-size: 1rem;
     border-radius: 20px;
-    margin: 0.2rem;
+    animation: answerreveal 5s linear ;
 }
+
+
+.score-display {
+    position: fixed; /* Or absolute, depending on layout */
+    top: 25%;
+    right: 20px;
+    padding: 10px;
+    background-color: rgba(226, 214, 214, 0.089);
+    color: white;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    z-index: 99;
+}
+
 
 @media screen and (max-width: 767px) {
     .questioncontainer{
@@ -370,8 +357,9 @@ button {
         opacity: 0.5;
         cursor: not-allowed;
     }
-}
 
+    
+}
 
 
 
@@ -386,4 +374,84 @@ button {
   /* Adjust styles for desktops and larger screens */
   
 }
+
+@keyframes Questions {
+	0% {
+		border: 1px solid rgb(163, 160, 160);
+	}
+    10%{
+        border: 1px solid rgba(255, 255, 255, 0.867);
+    }
+
+	30% {
+		border: 1px solid rgba(255, 255, 255, 0.64);
+	}
+
+    50% {
+		border: 1px solid rgba(255, 255, 255, 0.44);
+	}
+	70% {
+		border: 1px solid rgba(255, 255, 255, 0.64);
+	}
+
+    80%{
+        border: 1px solid rgba(255, 255, 255, 0.84);
+    }
+
+    90%{
+        border: 1px solid rgba(255, 255, 255, 0.9);
+    }
+
+    100%{
+        border: 1px solid rgba(255, 255, 255, 1);
+    }
+}
+
+
+	@keyframes answerreveal {
+        0% {
+            opacity: 0;
+            font-size: 0.4rem;
+        }
+        25% {
+            opacity: 0.25;
+        }
+        50% {
+            opacity: 0.5;
+        }
+        75% {
+            opacity: 0.75;
+        }
+        100% {
+           opacity: 1;
+           font-size: 1rem
+        }
+    }
+
+    @keyframes questionreveal {
+        0% {
+            opacity: 0;
+            
+            
+        }
+        25% {
+            opacity: 0.25;
+        }
+        50% {
+            opacity: 0.5;
+        }
+        75% {
+            opacity: 0.75;
+        }
+        100% {
+           opacity: 1;
+           
+           
+        }
+    }
+
+
+    
+
+
 

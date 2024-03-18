@@ -1,4 +1,4 @@
-const quizData = [
+const quizdata = [
     
         {
             question: "Was ist der Standard-Texteditor in den meisten Linux-Distributionen?",
@@ -1842,4 +1842,4 @@ const quizData = [
 
 ]
 
-export default quizData;
+export default quizdata;
